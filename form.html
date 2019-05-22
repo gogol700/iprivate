@@ -1,0 +1,31 @@
+<html>
+
+<body>
+    <form>
+    Name: <input id="name" type="text" name="name">
+    Surname: <input id="surname" type="text" name="surname">
+    <button id="save" type="button" onclick="saveData()">Save</button>    
+    <button id="reset" type="button" onclick="loadData()">Load</button>
+    </form>
+    </body>
+    
+    <script>
+        var inpName = document.getElementById("name");
+        var inpSurname = document.getElementById("surname");
+        
+        function saveData() {
+            window.localStorage.setItem("name", inpName.value);
+            window.localStorage.setItem("surname", inpSurname.value);
+        }
+        
+        function loadData() {
+          var resetName =  window.localStorage.getItem('name');
+          var resetSurname =  window.localStorage.getItem('surname');
+            
+            inpName.value = resetName;
+            inpSurname.value = resetSurname;
+        }
+        
+    </script>
+</html>
+

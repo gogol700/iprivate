@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <form>
+    Username: <input id="username" type="text" name="name">
+    Password: <input id="password" type="text" name="surname">
+    <button id="login" type="button" onclick="logData()">Login</button>    
+    </form>
+    </body>
+    
+    <script>
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var trueName = window.localStorage.getItem("username");
+        var truePass = window.localStorage.getItem("password");
+        
+        
+        function logData() {
+           if (username.value == trueName && password.value == truePass){
+                alert("Login succesfully")
+            } else{
+                alert("Login failed")
+            }          
+        } 
+        
+    </script>
+</html>
+
